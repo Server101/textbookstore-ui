@@ -1,0 +1,44 @@
+
+<div style="text-align:center">
+    <h3>
+      Wish List 
+    </h3>
+  
+    <title>TextbookstoreUi</title>
+  </div>
+
+<div class="container">
+    <form [formGroup]="wishform" (ngSubmit)="submitWish()" novalidate>
+      <div *ngIf="validMessage1 != ''">
+        <h3 class="has-info">{{validMessage1}}</h3>
+      </div>
+      <div class="form-group">
+        <label>User Name</label>
+        <input type="text" class="form-control" formControlName="user_name" required autofocus/>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" class="form-control" formControlName="user_email" required/>
+      </div>
+      <div class="form-group">
+        <label>WISH LIST NAME</label>
+        <input type="text" class="form-control" formControlName="wish_list_name" required/>
+      </div>
+      <div class="form-group">
+        <label>Book 1</label>
+        <input type="text" class="form-control" formControlName="item1" required/>
+      </div>
+
+      <div class="form-group">
+        <label>Book 2</label>
+        <input type="text" class="form-control" formControlName="item2" required/>
+      </div>
+      <div class="form-group">
+        <label>Book 3</label>
+        <input type="text" class="form-control" formControlName="item3" required/>
+      </div>
+      
+  
+      <button type="submit" class="btn btn-primary" >Submit</button>
+    </form>
+  </div>
