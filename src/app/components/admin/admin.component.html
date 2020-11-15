@@ -1,0 +1,46 @@
+
+<div style="text-align:center">
+  <h2>
+    Wish List Managment
+  </h2>
+
+  <title>TextbookstoreUi</title>
+</div>
+
+
+<div class="container">
+  <table class="table table-bordered table-inverse">
+    <tr>
+      <th>User Name</th>
+      <th>Email</th>
+      <th>Wish List Name</th>
+      <th>Book 1</th>
+      <th>Book 2</th>
+      <th class="text-right">Book 3</th>
+    </tr>
+    <tr *ngFor="let wish of wishes">
+      <td>
+        {{wish.user_name}}
+      </td>
+      <td>
+        {{wish.user_email}}
+      </td>
+      <td>
+        {{wish.wish_list_name}}
+      </td>
+      <td>
+        {{wish.item1}}
+      </td>
+      <td>
+        {{wish.item2}}
+      </td>
+      <td class="text-right">
+        {{wish.item3}}
+      </td>
+    </tr>
+  </table>
+</div>
+<div>
+
+
+  
