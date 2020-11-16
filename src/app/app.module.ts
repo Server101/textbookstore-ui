@@ -14,6 +14,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { HomeComponent } from './components/home/home.component';
 import { WishComponent } from './components/wish/wish.component';
 import { IndexComponent } from './components/index/index.component';
+//import {bootstrap} from './node_modules/bootstrap';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { IndexComponent } from './components/index/index.component';
     AdminComponent,
     HomeComponent,
     WishComponent,
-    IndexComponent
+    IndexComponent,
   ],
   imports: [
     BrowserModule,
