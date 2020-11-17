@@ -4,6 +4,9 @@ import { AdminComponent } from './components/admin/admin.component';
 import {HomeComponent} from './components/home/home.component';
 import { WishComponent } from './components/wish/wish.component';
 import { IndexComponent } from './components/index/index.component';
+import {AboutComponent} from './components/about/about.component';
+import {LoginComponent} from './components/login/login.component';
+import {ShopComponent} from './components/shop/shop.component';
 
 //New admin route
 const routes: Routes = [
@@ -23,7 +26,20 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent
-  }
+  },
+  {
+    path: 'about',
+    component: AboutComponent
+  },
+  {
+    path: 'shop',
+    component: ShopComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+
 ];
 
 @NgModule({
