@@ -14,6 +14,9 @@ import { AdminComponent } from './components/admin/admin.component';
 import { HomeComponent } from './components/home/home.component';
 import { WishComponent } from './components/wish/wish.component';
 import { IndexComponent } from './components/index/index.component';
+import { LoginComponent } from './components/login/login.component';
+import { ShopComponent } from './components/shop/shop.component';
+import { AboutComponent } from './components/about/about.component';
 
 
 @NgModule({
@@ -23,6 +26,10 @@ import { IndexComponent } from './components/index/index.component';
     HomeComponent,
     WishComponent,
     IndexComponent,
+    LoginComponent,
+    ShopComponent,
+    AboutComponent,
+    
   ],
   imports: [
     BrowserModule,

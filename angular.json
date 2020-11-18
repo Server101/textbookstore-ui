@@ -94,9 +94,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [
-             
-            ]
+            "scripts": []
           }
         },
         "lint": {
@@ -125,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "textbookstore-ui"
+    }
+  },
+  "defaultProject": "textbookstore-ui",
+  "cli": {
+    "analytics": "1be8aa8f-f2ea-4b49-b563-4f45da6b16ec"
+  }
 }
