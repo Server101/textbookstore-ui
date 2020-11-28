@@ -17,6 +17,9 @@ import { IndexComponent } from './components/index/index.component';
 import { LoginComponent } from './components/login/login.component';
 import { ShopComponent } from './components/shop/shop.component';
 import { AboutComponent } from './components/about/about.component';
+import { WishlistmanageComponent } from './components/wishlistmanage/wishlistmanage.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+
 
 
 @NgModule({
@@ -29,6 +32,7 @@ import { AboutComponent } from './components/about/about.component';
     LoginComponent,
     ShopComponent,
     AboutComponent,
+    WishlistmanageComponent,
     
   ],
   imports: [
@@ -36,7 +40,7 @@ import { AboutComponent } from './components/about/about.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    
+    DragDropModule,
     
   ],
 

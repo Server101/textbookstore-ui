@@ -7,6 +7,7 @@ import { IndexComponent } from './components/index/index.component';
 import {AboutComponent} from './components/about/about.component';
 import {LoginComponent} from './components/login/login.component';
 import {ShopComponent} from './components/shop/shop.component';
+import { WishlistmanageComponent } from './components/wishlistmanage/wishlistmanage.component';
 
 //New admin route
 const routes: Routes = [
@@ -38,6 +39,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'manage',
+    component: WishlistmanageComponent
   },
 
 ];
