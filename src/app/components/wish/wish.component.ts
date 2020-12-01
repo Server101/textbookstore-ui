@@ -33,6 +33,8 @@ export class WishComponent implements OnInit {
       item2: new FormControl('', Validators.required),
       item3: new FormControl('', Validators.required)
     });
+
+
   }
 
 
