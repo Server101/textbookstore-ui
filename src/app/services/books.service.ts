@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {HttpClient, HttpHeaders } from '@angular/common/http';
+
 
 import {Observable,of, from } from 'rxjs/';
 
@@ -14,6 +15,8 @@ const httpOptions = {
 export class BooksService {
 
   constructor(private http:HttpClient) { }
+//Functions for book s
+ 
 
    //Function to get all the wishes from the databases
    getBooks() {
@@ -24,12 +27,15 @@ getBook(id: string) {
     return this.http.get('server/api/v1/book' + id);
 }
 
+//To retrieve the books for list
 getBookname(book_name: string) {
   return this.http.get('server/api/v1/book' + book_name);
+
+  
 }
 
-createBookRegistration(wish) {
-    let body = JSON.stringify(wish);
+createBookRegistration(book) {
+    let body = JSON.stringify(book);
     return this.http.post('/server/api/v1/book', body, httpOptions);
 }
 }

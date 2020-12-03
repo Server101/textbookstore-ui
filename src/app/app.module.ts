@@ -10,7 +10,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BikeService} from './services/bike.service';
 import { WishService} from './services/wish.service';
+import { WishdataService} from './services/wishData.service';
 import { BooksService} from './services/books.service';
+
 import { AdminComponent } from './components/admin/admin.component';
 import { HomeComponent } from './components/home/home.component';
 import { WishComponent } from './components/wish/wish.component';
@@ -45,7 +47,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     
   ],
 
-  providers: [BikeService, WishService,BooksService],
+  providers: [BikeService, WishService,BooksService, WishdataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

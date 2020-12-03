@@ -97,7 +97,11 @@
 
 
   <!--Code finished-->
-
+  <div class="container">
+    <form [formGroup]="wishform" (ngSubmit)="submitWish()" novalidate>
+      <div *ngIf="validMessage1 != ''">
+        <h3 class="has-info">{{validMessage1}}</h3>
+      </div>
 <!--The Drop List drag features-->
   <div cdkDropListGroup>
     <!--Wish List 1-->
@@ -140,8 +144,11 @@
     </div>
   </div>
 </div>
-
 <!--Drag ends-->
+
+<button type="submit" class="btn btn-primary" >Save Changes</button> 
+</form>
+</div>
 
 
 <!-- Submit form here similar to wish-->

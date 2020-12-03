@@ -1,3 +1,48 @@
+/*For books display*/
+.book_list{
+  align-items: right;
+  align-content: flex-end;
+  
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-rendering: optimizeLegibility;
+  position: relative;
+  min-height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Courier New', sans-serif;
+  font-weight: normal;
+  font-size: 1.5em;
+  background: linear-gradient(150deg,#D5E3F1 15%,#FFFBD9 70%,#FFDFCB 94%);
+  text-align: center;
+}
+
+
+.text-right{
+  color: black;
+  align-content: center;
+}
+.book_name_text{
+  text-align: center; 
+  font-size: 12;
+  font-weight: none;
+
+  
+
+}
+
+.price{
+  text-align: center;
+}
+
+.wish_button{
+  text-align: center; 
+  font-size: 12;
+  font-weight: none;
+  color: rgb(58, 73, 54);
+}
+
+
 /*
 	Book Store Sass Theme
 	Author: Vinay Reddy
