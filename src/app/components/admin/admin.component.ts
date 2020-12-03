@@ -2,6 +2,7 @@
 import{Component, OnInit} from '@angular/core';
 import {BikeService } from '../../services/bike.service';
 import {WishService } from '../../services/wish.service';
+import {BooksService } from '../../services/books.service';
 
 
 @Component({
@@ -13,13 +14,24 @@ import {WishService } from '../../services/wish.service';
 export class AdminComponent implements OnInit {
     public bikes;
     public wishes
+    public books;
 
-    constructor(private bikeService: BikeService, private wishService: WishService) {} 
+    constructor(private bikeService: BikeService, private wishService: WishService, private booksSerivce: BooksService) {} 
     
     ngOnInit() {
         this.getBikes();
         this.getWishes();
-    }
+        this.getBooks();
+       
+
+        }
+
+                  
+
+
+                    
+//declare add to wish list
+//declare function mywish(): any;
 
 
     // adding WISHES LIST to save data
@@ -31,6 +43,15 @@ export class AdminComponent implements OnInit {
         );
     }
 
+    // adding a new function to save data
+    getBooks() {
+        this.booksSerivce.getBooks().subscribe(
+            data => {this.books = data},
+            err => console.error(err),
+            ()=>console.log('books loaded')
+        );
+    }
+
      // adding a new function to save data
      getBikes() {
         this.bikeService.getBikes().subscribe(
@@ -38,5 +59,8 @@ export class AdminComponent implements OnInit {
             err => console.error(err),
             ()=>console.log('bikes loaded')
         );
+
     }
+
+   
 }

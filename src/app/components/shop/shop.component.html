@@ -10,8 +10,8 @@
     <!-- ADDED BOOTSTRAP.MIN.CSS FILE, LOCATED IN NODE_MODULKE FOLDER. Use code in terminal to install:  npm install bootstrap@ jquery --save-->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!--<link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css"> -->
+  <!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css"> -->
     <!--<link rel="stylesheet" href="css/styles.css"> -->
 </head>
 
@@ -135,7 +135,53 @@
                     </div>
                 </div>
             </div>
-            <h2>recently added books to our store</h2>
+            <h2>Special Books</h2>
+
+            <!-- Books added for wish list-->
+        
+            <div class="container">
+                <form [formGroup]="bookform" (ngSubmit)="submitthebook()" novalidate>
+                 <!-- <div *ngIf="validMessage1 != ''">
+                    <h3 class="has-info">{{validMessage1}}</h3>
+                  </div>-->
+               <!-- Books added for wish list-->
+               <div class="book_list">
+                <tr  *ngFor="let book of books">
+                  
+                  <th></th>
+                  <th></th>
+                  <td ng-if="book.id = 1">
+                    
+                    <img class="book_name_text" src="./assets/images/bk3 Harry.jpg" width="180" height="250">
+                    <img class="book_name_text" src="./assets/images/bk4 dandelion.jpg" width="180" height="250">
+                    <img class="book_name_text" src="./assets/images/bk1 James.jpg" width="180" height="250">
+                    <img class="book_name_text" src="./assets/images/bk2 return.jpg" width="180" height="250"> 
+            
+            <!--  
+                    <div class="form-group">
+                      <input type="text" class="form-control" formControlName="book_name" required/>
+                      <input type="text" class="form-control" formControlName="isbn" required/>
+                      <input type="text" class="form-control" formControlName="purchase_price" required/>
+                    </div>
+                  -->
+                    
+                    <p class="book_name_text" id="demo"> {{book.book_name}}, </p>
+                    <p class="book_name_text" > ISBN Number:{{book.isbn}}, </p>
+                    <h6><span class="price">{{book.purchase_price}}</span> / <a href="#">Buy Now</a></h6>
+                    
+                    <button type="submit" class="btn btn-primary" >Add to Wish</button> 
+                   
+                </tr>
+              </div>
+            </form>
+            </div>      
+                
+                <!-- END -->
+
+
+
+                <h2>recently added books to our store</h2>    
+
             <div class="recent-book-sec">
                 <div class="row">
                     <div class="col-md-3">
@@ -143,6 +189,7 @@
                             <img src="./assets/images/r1.jpg" alt="img">
                             <h3><a href="#">Keepers of the kalachakara</a></h3>
                             <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
+                            <!--Create add to wish list button -->
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -355,7 +402,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/owl.carousel.min.js"></script>
-    <script src="js/custom.js"></script>
+    <script src="assets/custom.js"></script>
 </body>
 
 </html>

@@ -10,6 +10,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BikeService} from './services/bike.service';
 import { WishService} from './services/wish.service';
+import { WishdataService} from './services/wishData.service';
+import { BooksService} from './services/books.service';
+
 import { AdminComponent } from './components/admin/admin.component';
 import { HomeComponent } from './components/home/home.component';
 import { WishComponent } from './components/wish/wish.component';
@@ -17,6 +20,9 @@ import { IndexComponent } from './components/index/index.component';
 import { LoginComponent } from './components/login/login.component';
 import { ShopComponent } from './components/shop/shop.component';
 import { AboutComponent } from './components/about/about.component';
+import { WishlistmanageComponent } from './components/wishlistmanage/wishlistmanage.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+
 
 
 @NgModule({
@@ -29,6 +35,7 @@ import { AboutComponent } from './components/about/about.component';
     LoginComponent,
     ShopComponent,
     AboutComponent,
+    WishlistmanageComponent,
     
   ],
   imports: [
@@ -36,11 +43,11 @@ import { AboutComponent } from './components/about/about.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    
+    DragDropModule,
     
   ],
 
-  providers: [BikeService, WishService],
+  providers: [BikeService, WishService,BooksService, WishdataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

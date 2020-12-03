@@ -8,6 +8,8 @@
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800,900" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
   <!--<link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css"> -->
   <!--<link rel="stylesheet" href="css/styles.css"> -->
 </head>
@@ -112,4 +114,128 @@
 <div>
 
 
+  <!--
+  <table>
+    <tr ng-for="let book of books">
+        <td ng-if="data.type == 'hootsslllll' ">
+         //differnt template with hoot data
+        </td>
+        <td ng-if="data.type == 'story' ">
+         //differnt template with story data
+        </td>
+        <td ng-if="data.type == 'article' ">
+        //differnt template with article data
+        </td>
+    </tr>
+
+</table>-->
+
+
+<div class="container">
+  <table class="table table-bordered table-inverse">
+   <!--<tr>
+      <th>isbn</th>
+      <th></th>
+      <th>Author</th>
+      <th>publisher</th>
+      <th>Pages</th>
+      <th>Purchase_price</th>
+      
+      <th class="text-right">series</th>
+    </tr>--> 
+
+
+<!--
+    <tr *ngFor="let book of books">
+      <td>
+        {{book.isbn}}
+      </td>
+
+      <td ng-if="book.id == 1">
+        <td>
+          <img src="./assets/images/r1.jpg" alt="img">
+          {{book.book_name}}
+         
+          <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
+          </td>
+      
+*ngFor="let item of list; trackBy:item.id">-->
+
+
+<div class="book_list">
+<tr  *ngFor="let book of books">
+
+
   
+  
+  <th></th>
+  <td ng-if="book.id = 1">
+    <img src="./assets/images/r1.jpg" alt="img">
+    <p class="book_name_text" id="demo"> {{book.book_name}}, </p>
+    <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
+    <button onclick="mywish()">Add to Wish</button>
+   <!-- 
+    <p *ng-options="let book of books"></p>
+
+    <td *ngFor="let book of books> </td>--> 
+
+  <script>
+    function mywish() {
+      document.getElementById("demo").innerHTML = book.book_name;
+      writeFile( Path, Data, Callback)
+    }
+    </script>
+    
+</tr>
+</div>
+
+<!-- 
+    <tr *ngFor="let book of books">
+
+      <td>
+        <img src="./assets/images/r1.jpg" alt="img">
+        <p class="book_name_text"> {{book.id}}, </p>
+        <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
+        
+        <p ng-options></p>
+      </td>
+
+      <td>
+        <img src="./assets/images/r1.jpg" alt="img">
+        <p class="book_name_text" id="demo"> {{book.book_name}}, </p>
+        <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
+        <button onclick="mywish()">Add to Wish</button>
+        
+        <p ng-options></p>
+      </td>
+
+
+<script>
+function mywish() {
+  document.getElementById("demo").innerHTML = "added";
+  writeFile( src/assets/custom.js, book.book_name, Callback)
+}
+mywish();
+</script>
+    </tr>
+  </table>
+</div>
+<div>
+-->
+  
+
+      <!--.find{}, {"id":1}-->
+
+<!--
+      <td ng-if="book.id == 4">
+        <td>
+          <img src="./assets/images/r1.jpg" alt="img">
+          {{book.book_name}}
+         
+          <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
+          </td>
+      <td class="text-right">
+        
+      </td>-->
+
+
