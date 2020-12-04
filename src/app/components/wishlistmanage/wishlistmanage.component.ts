@@ -8,13 +8,18 @@ import {BooksService} from '../../services/books.service';
 import {FormGroup, FormControl, Validators} from '@angular/forms';
 import { Observable } from 'rxjs';
 import {WishService} from '../../services/wish.service';
+//import { Directive, TemplateRef } from '@angular/core';
+
 
 
 @Component({
-  selector: 'app-wishlistmanage',
+  selector: 'app-wishlistmanage', 
   templateUrl: './wishlistmanage.component.html',
   styleUrls: ['./wishlistmanage.component.css']
 })
+
+
+
 
 export class WishlistmanageComponent {
 
@@ -41,9 +46,13 @@ export class WishlistmanageComponent {
 
   //This is the next class of the drag and drop wish list
 
-  todo = [
-
-  ];
+  Main_List = [
+      'Dandelion',
+      'James and the Giant Peach',
+      'The Return',
+      'Walk dog',
+      'The Lord of the Rings'
+    ];
   
   //book_name.stringify
   //getBookname(book_name: string)
@@ -51,20 +60,12 @@ export class WishlistmanageComponent {
 
   
 
-  done = [
-    'Get up',
-    'Brush teeth',
-    'Take a shower',
-    'Check e-mail',
-    'Walk dog'
+  edit_me1 = [
+    
   ];
 
-  final = [
-    'GBaby',
-    'Bbaby',
-    'Tbaby',
-    'Chbaby',
-    'jMoney'
+  edit_me2 = [
+    
   ];
 
   All = [
@@ -138,6 +139,10 @@ submitWish() {
     this.validMessage1 = "Please fill out the form before submitting!";
   }
 }
+
+
+
+
   
 }
 
