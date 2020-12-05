@@ -1,7 +1,14 @@
 
 
+.specialbuttons{
+  background-color: white;
+  font-size: 11;
+
+}
+
+
 .specialrequest{
-  text-align: right;
+  text-align: left;
 }
 
 .example-list {
