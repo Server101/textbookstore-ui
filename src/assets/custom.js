@@ -1,9 +1,9 @@
-(function hello() {
-    alert('Hello!!!');
-})()
+//(function hello() {
+ //  alert('Hello!!!');
+//})()
 
 
-(function mywish() {
+//(function mywish() {
     
 
-})()
+//})()

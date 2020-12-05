@@ -47,7 +47,7 @@
                               <a href="http://localhost:4202/about" class="nav-link">About</a>
                           </li>
                           <li class="navbar-item">
-                              <a href="http://localhost:4202/wish" class="nav-link">Wishlist</a>
+                              <a href="http://localhost:4202/manage" class="nav-link">Wishlist</a>
                           </li>
                           <li class="navbar-item">
                               <a href="http://localhost:4202/login" class="nav-link">Login</a>
@@ -56,11 +56,11 @@
                               <a href="http://localhost:4202/admin" class="nav-link">Admin</a>
                           </li>
                       </ul>
-                      <div class="cart my-2 my-lg-0">
-                          <span>
-                              <i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
-                          <span class="quntity">3</span>
-                      </div>
+                      <div class="cart my-2 my-lg-0"><a href="http://localhost:4202/SCart" class="nav-link"></a> ShoppingCart
+                        <span>
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+                        <span class="quntity">3</span>
+                    </div>
                       <!--<form class="form-inline my-2 my-lg-0">
                           <input class="form-control mr-sm-2" type="search" placeholder="Search here..." aria-label="Search">
                           <span class="fa fa-search"></span>
@@ -161,7 +161,7 @@
       
 *ngFor="let item of list; trackBy:item.id">-->
 
-
+<!--  FOR THE GET WISHES BY JAVASCRIPT FILE
 <div class="book_list">
 <tr  *ngFor="let book of books">
 
@@ -173,12 +173,13 @@
     <img src="./assets/images/r1.jpg" alt="img">
     <p class="book_name_text" id="demo"> {{book.book_name}}, </p>
     <h6><span class="price">$19</span> / <a href="#">Buy Now</a></h6>
-    <button onclick="mywish()">Add to Wish</button>
+    <button onclick="mywish()">Add to Wish</button>-->
    <!-- 
     <p *ng-options="let book of books"></p>
 
     <td *ngFor="let book of books> </td>--> 
 
+    <!-- 
   <script>
     function mywish() {
       document.getElementById("demo").innerHTML = book.book_name;
@@ -187,7 +188,7 @@
     </script>
     
 </tr>
-</div>
+</div> -->
 
 <!-- 
     <tr *ngFor="let book of books">

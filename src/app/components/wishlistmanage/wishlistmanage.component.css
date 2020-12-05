@@ -1,3 +1,16 @@
+
+
+.specialbuttons{
+  background-color: white;
+  font-size: 11;
+
+}
+
+
+.specialrequest{
+  text-align: left;
+}
+
 .example-list {
     width: 500px;
     max-width: 100%;

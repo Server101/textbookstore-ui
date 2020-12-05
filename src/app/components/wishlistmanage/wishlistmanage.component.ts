@@ -1,23 +1,31 @@
 
 
 import { Component, OnInit } from '@angular/core';
-import { DragDropModule, transferArrayItem } from '@angular/cdk/drag-drop';
+import { copyArrayItem, DragDropModule, transferArrayItem } from '@angular/cdk/drag-drop';
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 
 import {BooksService} from '../../services/books.service';
 import {FormGroup, FormControl, Validators} from '@angular/forms';
 import { Observable } from 'rxjs';
 import {WishService} from '../../services/wish.service';
+//import { Directive, TemplateRef } from '@angular/core';
+
 
 
 @Component({
-  selector: 'app-wishlistmanage',
+  selector: 'app-wishlistmanage', 
   templateUrl: './wishlistmanage.component.html',
-  styleUrls: ['./wishlistmanage.component.css']
+  styleUrls: ['./wishlistmanage.component.css',
+    
+]
+  
 })
 
-export class WishlistmanageComponent {
 
+
+
+export class WishlistmanageComponent {
+  public deleteArray;
   public books;
   wishform: FormGroup;
   validMessage1:string = "";
@@ -27,12 +35,12 @@ export class WishlistmanageComponent {
   ngOnInit()  {
     
     this.wishform = new FormGroup({
-      user_name: new FormControl('', Validators.required),
-      user_email: new FormControl('', Validators.required),
-      wish_list_name: new FormControl('', Validators.required),
-      item1: new FormControl('', Validators.required),
-      item2: new FormControl('', Validators.required),
-      item3: new FormControl('', Validators.required)
+      user_name: new FormControl(),
+      user_email: new FormControl(),
+      wish_list_name: new FormControl(),
+      item1: new FormControl(),
+      item2: new FormControl(),
+      item3: new FormControl()
     });
     this.getBooks();
    // this.getBookname();
@@ -41,9 +49,20 @@ export class WishlistmanageComponent {
 
   //This is the next class of the drag and drop wish list
 
-  todo = [
+  Main_List = [
+      
+      {id:1, title: 'Harry Potter and the Sorcerers Stone'},
+      {id:2, title:'Dandelion'},
+      {id:3, title:'James and the Giant Peach'},
+      {id:4, title:'The Return'}
+    ];
+  
+    //Removing items from wishlist
+    removeItem(id){
+      this.Main_List = this.Main_List.filter(item => item.id !== id);
+    }
 
-  ];
+
   
   //book_name.stringify
   //getBookname(book_name: string)
@@ -51,21 +70,18 @@ export class WishlistmanageComponent {
 
   
 
-  done = [
-    'Get up',
-    'Brush teeth',
-    'Take a shower',
-    'Check e-mail',
-    'Walk dog'
+  edit_me1 = [
+    
   ];
 
-  final = [
-    'GBaby',
-    'Bbaby',
-    'Tbaby',
-    'Chbaby',
-    'jMoney'
+  edit_me2 = [
+    
   ];
+
+  Delete = [
+    
+  ];
+
 
   All = [
     'red',
@@ -75,6 +91,14 @@ export class WishlistmanageComponent {
     'Walk '
   ];
 
+  shoppingCartItems = [ {id:0, title: ""},
+                      
+ 
+]
+
+saveItem(id){
+    this.shoppingCartItems = this.Main_List.filter(item => item.id == id);
+  }
   //Code for the 3 drops for wishlist
 
   drop1(event: CdkDragDrop<string[]>) {
@@ -91,6 +115,7 @@ export class WishlistmanageComponent {
   drop2(event: CdkDragDrop<string[]>) {
     if (event.previousContainer == event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+      
     } else {
       transferArrayItem(event.previousContainer.data,
                         event.container.data,
@@ -110,6 +135,30 @@ export class WishlistmanageComponent {
     }
   }
 
+  drop4(event: CdkDragDrop<string[]>) {
+    if (event.previousContainer == event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      transferArrayItem(event.previousContainer.data,
+                        event.container.data,
+                        event.previousIndex,
+                        event.currentIndex);
+    }
+  }
+
+  drop(event: any) {
+    if (event.previousContainer === event.container) {
+        moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+        copyArrayItem(event.previousContainer.data,
+            event.container.data,
+            event.previousIndex,
+            event.currentIndex);
+    }
+}
+
+
+
 
   getBooks() {
     this.booksSerivce.getBooks().subscribe(
@@ -119,12 +168,14 @@ export class WishlistmanageComponent {
     );
 }
 
+
+
 ////This ts the submit rregistration form information/function
 
 submitWish() {
 
   if (this.wishform.valid) {
-    this.validMessage1 = "Your wish list is submitted. Thank You!";
+    this.validMessage1 = "Your book is added to the cart. Thank You!";
     this.wishService.createWishRegistration(this.wishform.value).subscribe(
       data =>{
         this.wishform.reset();
@@ -138,6 +189,10 @@ submitWish() {
     this.validMessage1 = "Please fill out the form before submitting!";
   }
 }
+
+
+
+
   
 }
 

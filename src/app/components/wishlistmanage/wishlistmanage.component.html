@@ -11,6 +11,14 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800,900" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.js"></script>
+  <script src="app.js"></script>
+  <script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+<script src="js/custom.js"></script>
+<script src="src/assets/app.js.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!--<link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css"> -->
     <!--<link rel="stylesheet" href="css/styles.css"> -->
 </head>
@@ -48,7 +56,7 @@
                                 <a href="http://localhost:4202/about" class="nav-link">About</a>
                             </li>
                             <li class="navbar-item">
-                                <a href="http://localhost:4202/wish" class="nav-link">Wishlist</a>
+                                <a href="http://localhost:4202/manage" class="nav-link">Wishlist</a>
                             </li>
                             <li class="navbar-item">
                                 <a href="http://localhost:4202/login" class="nav-link">Login</a>
@@ -56,8 +64,9 @@
                             <li class="navbar-item">
                                 <a href="http://localhost:4202/admin" class="nav-link">Admin</a>
                             </li>
+                            
                         </ul>
-                        <div class="cart my-2 my-lg-0">
+                        <div class="cart my-2 my-lg-0"><a href="http://localhost:4202/SCart" class="nav-link"></a> ShoppingCart
                             <span>
                                 <i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
                             <span class="quntity">3</span>
@@ -89,7 +98,7 @@
       </h1>
     
     </div>
-
+ 
 
 <!--Code for the movie switch-->
 
@@ -102,57 +111,89 @@
       <div *ngIf="validMessage1 != ''">
         <h3 class="has-info">{{validMessage1}}</h3>
       </div>
+
 <!--The Drop List drag features-->
   <div cdkDropListGroup>
     <!--Wish List 1-->
     <div class="example-container">
-      <h2>To do</h2>
-  
+      <h2>Main List</h2>
+     
       <div
         cdkDropList
-        [cdkDropListData]="todo"
+        [cdkDropListData]="Main_List"
         class="example-list"
         (cdkDropListDropped)="drop1($event)">
-        <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+        <div class="example-box" *ngFor="let item of Main_List" cdkDrag>{{item.title}}</div>
       </div>
     </div>
   
     <!--Wish List 2-->
     <div class="example-container">
-      <h2>Done</h2>
+      <h2>List 2</h2>
   
       <div
         cdkDropList
-        [cdkDropListData]="done"
+        [cdkDropListData]="edit_me1"
         class="example-list"
         (cdkDropListDropped)="drop2($event)">
-        <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+        <div class="example-box" *ngFor="let item of edit_me1" cdkDrag>{{item.title}}</div>
       </div>
     </div>
   
 
   <!--Wish List 3-->
   <div class="example-container">
-    <h2>Final</h2>
-
+    <h2>List 3</h2>
     <div
       cdkDropList
-      [cdkDropListData]="final"
+      [cdkDropListData]="edit_me2"
       class="example-list"
       (cdkDropListDropped)="drop3($event)">
-      <div class="example-box" *ngFor="let item of final" cdkDrag>{{item}}</div>
+      <div class="example-box" *ngFor="let item of edit_me2" cdkDrag>{{item.title}}</div>
+
+
+   
     </div>
   </div>
 </div>
-<!--Drag ends-->
 
-<button type="submit" class="btn btn-primary" >Save Changes</button> 
+<!-- The removal button-->
+<div *ngFor="let value of Main_List;">
+    {{value.id}}. {{value.title}} <button class="specialbuttons"(click)="removeItem(value.id)">Remove</button>
+    <button class="specialbuttons" (click)="saveItem(value.id)">Add to Cart</button>
+    </div>
+
+
+  <!--Wish List 3-->
+  
+
+
+<!-- TESTING THE EDITABLE-->
+
+   <p class="specialrequest">Cant fint the book your looking for? Submit a special request.</p>
+<a href="http://localhost:4202/wish" class="nav-specialrequest">File Special</a>
+<button type="submit" class="btn btn-primary" >Save</button> 
 </form>
 </div>
 
 
 <!-- Submit form here similar to wish-->
 
+    <!--  
+    <body>
+    
+    <div id="div1" style="height:100px;width:300px;border:1px solid black;background-color:yellow;">
+    
+    This is some text in the div.
+    <p>This is a paragraph in the div.</p>
+    <p>This is another paragraph in the div.</p>
+    
+    </div>
+    <br>
+    
+    <button>Remove div element</button>
+    
+    </body>-->
 
 
 
@@ -244,7 +285,9 @@
 </footer>
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js"></script>
 <script src="js/custom.js"></script>
+
+
 </body>
 </html>
+

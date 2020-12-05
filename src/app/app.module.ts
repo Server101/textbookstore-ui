@@ -22,6 +22,8 @@ import { ShopComponent } from './components/shop/shop.component';
 import { AboutComponent } from './components/about/about.component';
 import { WishlistmanageComponent } from './components/wishlistmanage/wishlistmanage.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { EditableComponent } from './components/editable/editable.component';
+import { WincComponent } from './components/winc/winc.component';
 
 
 
@@ -36,6 +38,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     ShopComponent,
     AboutComponent,
     WishlistmanageComponent,
+    EditableComponent,
+    WincComponent,
     
   ],
   imports: [
@@ -51,3 +55,4 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
