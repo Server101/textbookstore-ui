@@ -4,6 +4,10 @@
 This Repository serves as the Front-End for Geek Text BookStore Application
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+Live Test Coming Soon!
+
+![GifMaker_20210827223209707](https://user-images.githubusercontent.com/57880227/131203961-004431e9-53bf-4ccb-8200-2f4699e43529.gif)
+
 
 ## Development server
 
