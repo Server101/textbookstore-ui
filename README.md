@@ -1,7 +1,8 @@
 
 
 # TextbookstoreUi
-This Repository serves as the Front-End for Geek Text BookStore Application
+This Repository serves as the Front-End for Geek Text BookStore Application.
+Here is the repository for the back end Spring Framework https://github.com/Server101/Geek-Text
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
 
